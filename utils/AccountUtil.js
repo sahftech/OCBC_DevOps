@@ -59,16 +59,20 @@ async function deposit (req, res) {
 
         for (var i = 0; i < allAccounts.length; i++) {
             var currUser = allAccounts[i];
-            if (currUser.access == access) {
-                currUser.transactions.push({
-                    "datetime": formattedDate,
-                    "type": "D",
-                    "desc": desc,
-                    "amount": parseFloat(amount)
-                })
-                currUser.balance = currUser.balance + parseFloat(amount);
-                accountFound = true;
-            }      
+            if (amount > 0)  {          
+                if (currUser.access == access) {
+                    currUser.transactions.push({
+                        "datetime": formattedDate,
+                        "type": "D",
+                        "desc": desc,
+                        "amount": parseFloat(amount)
+                    })
+                    currUser.balance = currUser.balance + parseFloat(amount);
+                    accountFound = true;
+                }
+            } else {
+                return res.status(500).json({ message: 'Invalid amount!' });
+            }
         }
 
         if (accountFound) {    
@@ -97,18 +101,22 @@ async function withdraw (req, res) {
 
         for (var i = 0; i < allAccounts.length; i++) {
             var currUser = allAccounts[i];
-            if (currUser.access == access) {
-                currUser.transactions.push({
-                    "datetime": formattedDate,
-                    "type": "W",
-                    "desc": desc,
-                    "amount": parseFloat(amount)
-                })
-                currUser.balance = currUser.balance - parseFloat(amount);
-                if (currUser.balance < 0) {
-                    return res.status(201).json({ message: 'Withdrawal amount exceeds balance!' });
+            if (amount > 0) {
+                if (currUser.access == access) {
+                    currUser.transactions.push({
+                        "datetime": formattedDate,
+                        "type": "W",
+                        "desc": desc,
+                        "amount": parseFloat(amount)
+                    })
+                    currUser.balance = currUser.balance - parseFloat(amount);
+                    if (currUser.balance < 0) {
+                        return res.status(201).json({ message: 'Withdrawal amount exceeds balance!' });
+                    }
+                    accountFound = true;
                 }
-                accountFound = true;
+            } else {
+                return res.status(500).json({ message: 'Invalid amount!' });
             }
                 
         }
@@ -124,62 +132,62 @@ async function withdraw (req, res) {
     }
 }
 
-async function transfer (req, res) {
-    try {
-        const sender = req.body.sender;
-        const receiver = req.body.receiver;
-        const amount = req.body.amount;
-        const desc = req.body.desc;
+// async function transfer (req, res) {
+//     try {
+//         const sender = req.body.sender;
+//         const receiver = req.body.receiver;
+//         const amount = req.body.amount;
+//         const desc = req.body.desc;
 
-        const currentDate = new Date();
-        const formattedDate = moment(currentDate).format('YYYY-MM-DD HH:mm:ss');
+//         const currentDate = new Date();
+//         const formattedDate = moment(currentDate).format('YYYY-MM-DD HH:mm:ss');
 
-        const allAccounts = await readJSON('utils/accounts.json');
+//         const allAccounts = await readJSON('utils/accounts.json');
 
-        var senderFound = false;
-        var receiverFound = false;
+//         var senderFound = false;
+//         var receiverFound = false;
 
-        for (var i = 0; i < allAccounts.length; i++) {
-            var currUser = allAccounts[i];
-            if (currUser.access == sender) {
-                currUser.transactions.push({
-                    "datetime": formattedDate,
-                    "type": "W",
-                    "desc": desc + " - " + receiver,
-                    "amount": parseFloat(amount)
-                })
-                currUser.balance = currUser.balance - parseFloat(amount);
-                if (currUser.balance < 0) {
-                    return res.status(201).json({ message: 'Withdrawal amount exceeds balance!' });
-                }
-                senderFound = true;
-            }
-            if (currUser.access == receiver) {
-                currUser.transactions.push({
-                    "datetime": formattedDate,
-                    "type": "D",
-                    "desc": desc + " - " + sender,
-                    "amount": parseFloat(amount)
-                })
-                currUser.balance = currUser.balance + parseFloat(amount);
-                receiverFound = true;
-            }  
-        }
+//         for (var i = 0; i < allAccounts.length; i++) {
+//             var currUser = allAccounts[i];
+//             if (currUser.access == sender) {
+//                 currUser.transactions.push({
+//                     "datetime": formattedDate,
+//                     "type": "W",
+//                     "desc": desc + " - " + receiver,
+//                     "amount": parseFloat(amount)
+//                 })
+//                 currUser.balance = currUser.balance - parseFloat(amount);
+//                 if (currUser.balance < 0) {
+//                     return res.status(201).json({ message: 'Withdrawal amount exceeds balance!' });
+//                 }
+//                 senderFound = true;
+//             }
+//             if (currUser.access == receiver) {
+//                 currUser.transactions.push({
+//                     "datetime": formattedDate,
+//                     "type": "D",
+//                     "desc": desc + " - " + sender,
+//                     "amount": parseFloat(amount)
+//                 })
+//                 currUser.balance = currUser.balance + parseFloat(amount);
+//                 receiverFound = true;
+//             }  
+//         }
 
-        if (senderFound && receiverFound) {    
-            await fs.writeFile('utils/accounts.json', JSON.stringify(allAccounts), 'utf8');   
-            return res.status(201).json({ message: 'Transfer successful!' });
-        } else {
-            return res.status(500).json({ message: 'Invalid operation!' });
-        }
-    } catch (error) {
-        return res.status(500).json({ message: error.message });
-    }
-}
+//         if (senderFound && receiverFound) {    
+//             await fs.writeFile('utils/accounts.json', JSON.stringify(allAccounts), 'utf8');   
+//             return res.status(201).json({ message: 'Transfer successful!' });
+//         } else {
+//             return res.status(500).json({ message: 'Invalid operation!' });
+//         }
+//     } catch (error) {
+//         return res.status(500).json({ message: error.message });
+//     }
+// }
 
 async function balance (req, res) {
     try {
-        const access = req.params.access;
+        const access = req.body.access;
 
         const allAccounts = await readJSON('utils/accounts.json');
 
@@ -204,5 +212,5 @@ async function balance (req, res) {
 }
 
 module.exports = {
-    readJSON, writeJSON, login, deposit, withdraw, balance, transfer
+    readJSON, writeJSON, login, deposit, withdraw, balance
 };
