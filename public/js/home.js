@@ -2,7 +2,7 @@ function loadBalance() {
     var response = '';
     var request = new XMLHttpRequest();
 
-    request.open('GET', '/balance/' + sessionStorage.getItem("email"), true);
+    request.open('GET', '/balance/' + sessionStorage.getItem("access"), true);
     request.setRequestHeader('Content-Type', 'application/json');
 
     request.onload = function () {
