@@ -9,7 +9,7 @@ function loadBalance() {
         response = JSON.parse(request.responseText);
         transactions = response.transactions;
 
-        document.getElementById('accountName').innerHTML = "Welcome " + response.name +"!";
+        document.getElementById('accountName').innerHTML = response.name;
 
         document.getElementById('accountID').innerHTML = "<h5>" + response.type +"<h5>";
         document.getElementById('accountID').innerHTML += "<h5>" + response.id +"<h5>";
