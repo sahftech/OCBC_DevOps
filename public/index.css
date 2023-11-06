@@ -26,19 +26,6 @@
     z-index: 1;
 }
 
-.register {
-    width: 100%; /* Set the width of the card */
-    max-width: 400px; 
-    height: 700px;/* Set a maximum width if needed*/
-    position: fixed;
-    justify-content: center;
-    overflow: auto;
-    top: 50%;
-    right: 50px; /* Adjust this value to position it to the right */
-    transform: translateY(-50%);
-    z-index: 1;
-    background: #ffffff;
-} 
 
 *{
 box-sizing: border-box;
@@ -88,7 +75,6 @@ flex-direction: column;
     backdrop-filter: blur(10px); /* Apply a blur effect to the content behind the container */
     box-shadow: 0 0 5px #999999;
   }
-
 
 
 .login .col-left,
