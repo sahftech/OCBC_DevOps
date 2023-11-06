@@ -26,6 +26,20 @@
     z-index: 1;
 }
 
+.register {
+    width: 100%; /* Set the width of the card */
+    max-width: 400px; 
+    height: 700px;/* Set a maximum width if needed*/
+    position: fixed;
+    justify-content: center;
+    overflow: auto;
+    top: 50%;
+    right: 50px; /* Adjust this value to position it to the right */
+    transform: translateY(-50%);
+    z-index: 1;
+    background: #ffffff;
+} 
+
 *{
 box-sizing: border-box;
 }

@@ -6,6 +6,7 @@
     <title>DVOPS - Resource Management Web App</title>
     <script src="js/register.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
     <link rel="stylesheet" href="index.css">
 </head>
 
@@ -13,21 +14,55 @@
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <div class="card">
+                <div class="register">
                     <div class="card-header">
                         <h5>Create an Account</h5>
                     </div>
                     <div class="card-body">
                         <form>
                             <div class="form-group">
-                                <input type="email" class="form-control" id="email" placeholder="Email">
+                                <label for="name">Name:</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" id="password" placeholder="Password">
+                                <label for="salutation">Salutation:</label>
+                                <select class="form-control" id="salutation">
+                                    <option value="Mr">Mr</option>
+                                    <option value="Ms">Ms</option>
+                                    <option value="Mrs">Mrs</option>
+                                </select>
                             </div>
+                        
                             <div class="form-group">
-                                <input type="password" class="form-control" id="confirmPassword"
-                                    placeholder="Confirm password">
+                                <label for="nric">NRIC:</label>
+                                <input type="text" class="form-control" id="nric" placeholder="Enter your NRIC" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                            </div>
+                        
+                            <div class="form-group">
+                                <label for="accountType">Type of Account:</label>
+                                <select class="form-control" id="accountType">
+                                    <option value="Savings">Savings</option>
+                                    <option value="Checking">Checking</option>
+                                    <option value="Investment">Investment</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact">Contact:</label>
+                                <input type="text" class="form-control" id="contact" placeholder="Enter your contact information" required>
+                            </div>
+                        
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="password" placeholder="Password" required>
+                            </div>
+                        
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm password" required>
                             </div>
                             <p align="center" id="error" class="text-danger"></p>
                             <p align="center">
