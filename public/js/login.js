@@ -2,10 +2,10 @@ function login() {
 	var response = "";
 	
 	var jsonData = new Object();
-	jsonData.email = document.getElementById("email").value;
-	jsonData.password = document.getElementById("password").value;
+	jsonData.access = document.getElementById("access").value;
+	jsonData.pin = document.getElementById("pin").value;
 	
-	if (jsonData.email == "" || jsonData.password == "") {
+	if (jsonData.access == "" || jsonData.pin == "") {
 		document.getElementById("error").innerHTML = 'All fields are required!';
 		return;
 	} 
@@ -19,7 +19,7 @@ function login() {
 		response = JSON.parse(request.responseText);
 
 		if (response.message == "Login successful!") {
-			sessionStorage.setItem("email", jsonData.email)
+			sessionStorage.setItem("access", jsonData.access)
             window.location.href = 'home.html';
 		}
 		else {
