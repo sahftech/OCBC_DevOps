@@ -14,13 +14,13 @@ app.post('/login', login);
 app.post('/deposit', deposit);
 app.post('/withdraw', withdraw);
 app.post('/transfer', transfer);
-app.get('/balance/:email', balance);
+app.get('/balance/:access', balance);
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + "/public/" + startPage);
 })
 
 const server = app.listen(PORT, function () {
-console.log(`Demo project at: ${PORT}!`); });
+console.log(`Demo project at: http://localhost:${PORT}/`); });
 
 module.exports = { app, server }
