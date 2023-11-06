@@ -10,35 +10,37 @@
 </head>
 
 <body>
-  <div class="container mt-5">
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-header">
-            <h5>Digital Banking</h5>
+  <div class="wrapper login">
+      <div class="container">
+          <div class="col-left">
+              <div class="login-text">
+                  <h2>Welcome!</h2>
+                  <p>Create your account.<br>For Free!</p>
+                  <a href="register.html" class="btn">Sign Up</a>
+              </div>
           </div>
-          <div class="card-body">
-            <form>
-              <div class="form-group">
-                <input type="email" class="form-control" id="access" placeholder="Access Code">
+          <div class="col-right">
+              <div class="login-form">
+                  <h2>Login</h2>
+                  <form action="">
+                      <p>
+                          <label>Username/Email address<span>*</span></label>
+                          <input type="text" placeholder="Username or Email" required>
+                      </p>
+                      <p>
+                          <label>Password<span>*</span></label>
+                          <input type="password" placeholder="Password" required>
+                      </p>
+                      <p>
+                          <input type="submit" value="Sign In">
+                      </p>
+                      <p>
+                          <a href="">Forgot password?</a>
+                      </p>
+                  </form>
               </div>
-              <div class="form-group">
-                <input type="password" class="form-control" id="pin" placeholder="Pin">
-              </div>
-              <p align="center" id="error" class="text-danger"></p>
-              <div class="form-group">
-                <button type="button" class="btn btn-primary btn-block custom-red-button"
-                  onclick="login()">Login</button>
-              </div>
-
-              <div class="form-group">
-                <button type="button" class="btn btn-primary btn-block" onclick="getstarted()">Get Started</button>
-              </div>
-            </form>
           </div>
-        </div>
       </div>
-    </div>
   </div>
 </body>
 
