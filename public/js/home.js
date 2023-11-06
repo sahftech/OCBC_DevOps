@@ -9,12 +9,13 @@ function loadBalance() {
         response = JSON.parse(request.responseText);
         transactions = response.transactions;
 
-        document.getElementById('accountName').innerHTML = response.name;
+        document.getElementById('accountName').innerText = response.name;
+        document.getElementById('accountEmail').innerText = response.email;
 
-        document.getElementById('accountID').innerHTML = "<h5>" + response.type +"<h5>";
-        document.getElementById('accountID').innerHTML += "<h5>" + response.id +"<h5>";
+        // document.getElementById('accountID').innerHTML = "<h5>" + response.type +"<h5>";
+        // document.getElementById('accountID').innerHTML += "<h5>" + response.id +"<h5>";
 
-        document.getElementById('accountBalance').innerHTML = "<h5>Account Balance: $" + response.balance +"<h5>";
+        document.getElementById('accountBalance').innerText = "$" + response.balance;
         
         var html = ''
         for (var i = 0; i < transactions.length; i++)
@@ -25,15 +26,48 @@ function loadBalance() {
                 cssClass = " class = 'withdrawal'";
                 amountSign = "-";
             }
+            
 
-            html += '<tr>' +
-                '<td>' + transactions[i].datetime + '</td>' +
-                '<td>' + transactions[i].desc + '</td>' +
-                '<td' + cssClass + '>' + amountSign + transactions[i].amount + '</td>' +
-            '</tr>'
+            // <div class="transfer">
+            //     <dl class="transfer-details">
+            //       <div>
+            //         <dt>Warner Bros.</dt>
+            //       </div>
+            //       <div>
+            //         <dt>Description Description DescriptionDescription ptionDescription</dt>
+            //       </div>
+            //       <div>
+            //         <dt>22 Oct. 21</dt>
+            //         <dd>11.23.4</dd>
+            //       </div>
+            //     </dl>
+            //     <div class="transfer-number">
+            //       - $ 70
+            //     </div>
+            //   </div>
+            var html = "<div class='transfer'" + ">" +
+                        "<dl class='transfer-details'>" +
+                        "<div>" +
+                        "<dt>" + amountSign + transactions[i].amount + "</dt>" +
+                        "</div>" +
+                        "<div>" +
+                        "<dt>" + transactions[i].desc + "</dt>" +
+                        "</div>" +
+                        "<div>" +
+                        "<dt>" + transactions[i].datetime.slice(0, 10) + "</dt>" +
+                        "<dd>" + transactions[i].datetime.slice(11) + "</dd>" +
+                        "</div>" +
+                        "</dl>" +
+                        "<div />";
+            
+
+            var box = document.createElement("div");
+            box.classList.add("transfer");
+            box.innerHTML = html;
+            document.getElementsByClassName("transfer-box")[0].appendChild(box);   
+            
+            
         }
-
-        document.getElementById('tableContent').innerHTML = html;
     };
 
     request.send();
