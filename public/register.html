@@ -6,7 +6,8 @@
     <title>DVOPS - Resource Management Web App</title>
     <script src="js/register.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    
+    <link rel="stylesheet" href="https://unpkg.com/ionicons@4.4.7/dist/css/ionicons.min.css">
+
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 
@@ -78,40 +79,45 @@
                 </form>
             </div>
             <div class="form_3 data_info" style="display: none;">
-                <h2>Professional Info</h2>
+                <h2>Authentication</h2>
                 <form>
                     <div class="form_container">
                         <div class="input_wrap">
-                            <label for="company">Current Company</label>
-                            <input type="text" name="Current Company" class="input" id="company">
+                            <label for="email">Email</label>
+                            <input type="text" name="Email" class="input" id="Email">
                         </div>
                         <div class="input_wrap">
-                            <label for="experience">Total Experience</label>
-                            <input type="text" name="Total Experience" class="input" id="experience">
+                            <label for="password">Password</label>
+                            <input type="password" name="password" class="input" id="password">
                         </div>
                         <div class="input_wrap">
-                            <label for="designation">Designation</label>
-                            <input type="text" name="Designation" class="input" id="designation">
+                            <label for="confirm_password">Confirm Password</label>
+                            <input type="password" name="confirm_password" class="input" id="confirm_password">
                         </div>
                     </div>
                 </form>
             </div>
         </div>
         <div class="btns_wrap">
+            <a href="index.html" class="button-link" style="font-size: larger;">Already have an account? Login</a>
             <div class="common_btns form_1_btns">
-                <button type="button" class="btn_next">Next <span class="icon"><ion-icon name="arrow-forward-sharp"></ion-icon></span></button>
+                <button type="button" class="btn_next">Next <span class="icon"><ion-icon
+                            name="arrow-forward-sharp"></ion-icon></span></button>
             </div>
             <div class="common_btns form_2_btns" style="display: none;">
-                <button type="button" class="btn_back"><span class="icon"><ion-icon name="arrow-back-sharp"></ion-icon></span>Back</button>
-                <button type="button" class="btn_next">Next <span class="icon"><ion-icon name="arrow-forward-sharp"></ion-icon></span></button>
+                <button type="button" class="btn_back"><span class="icon"><ion-icon
+                            name="arrow-back-sharp"></ion-icon></span>Back</button>
+                <button type="button" class="btn_next">Next <span class="icon"><ion-icon
+                            name="arrow-forward-sharp"></ion-icon></span></button>
             </div>
             <div class="common_btns form_3_btns" style="display: none;">
-                <button type="button" class="btn_back"><span class="icon"><ion-icon name="arrow-back-sharp"></ion-icon></span>Back</button>
+                <button type="button" class="btn_back"><span class="icon"><ion-icon
+                            name="arrow-back-sharp"></ion-icon></span>Back</button>
                 <button type="button" class="btn_done">Done</button>
             </div>
         </div>
     </div>
-    
+
     <div class="modal_wrapper">
         <div class="shadow"></div>
         <div class="success_wrap">
@@ -119,80 +125,80 @@
             <p>You have successfully completed the process.</p>
         </div>
     </div>
-    
+
     <script type="text/javascript" src="scripts.js"></script>
-    
-    </body>
-    <script>
-        var form_1 = document.querySelector(".form_1");
-var form_2 = document.querySelector(".form_2");
-var form_3 = document.querySelector(".form_3");
+
+</body>
+<script>
+    var form_1 = document.querySelector(".form_1");
+    var form_2 = document.querySelector(".form_2");
+    var form_3 = document.querySelector(".form_3");
 
 
-var form_1_btns = document.querySelector(".form_1_btns");
-var form_2_btns = document.querySelector(".form_2_btns");
-var form_3_btns = document.querySelector(".form_3_btns");
+    var form_1_btns = document.querySelector(".form_1_btns");
+    var form_2_btns = document.querySelector(".form_2_btns");
+    var form_3_btns = document.querySelector(".form_3_btns");
 
 
-var form_1_next_btn = document.querySelector(".form_1_btns .btn_next");
-var form_2_back_btn = document.querySelector(".form_2_btns .btn_back");
-var form_2_next_btn = document.querySelector(".form_2_btns .btn_next");
-var form_3_back_btn = document.querySelector(".form_3_btns .btn_back");
+    var form_1_next_btn = document.querySelector(".form_1_btns .btn_next");
+    var form_2_back_btn = document.querySelector(".form_2_btns .btn_back");
+    var form_2_next_btn = document.querySelector(".form_2_btns .btn_next");
+    var form_3_back_btn = document.querySelector(".form_3_btns .btn_back");
 
-var form_2_progessbar = document.querySelector(".form_2_progessbar");
-var form_3_progessbar = document.querySelector(".form_3_progessbar");
+    var form_2_progessbar = document.querySelector(".form_2_progessbar");
+    var form_3_progessbar = document.querySelector(".form_3_progessbar");
 
-var btn_done = document.querySelector(".btn_done");
-var modal_wrapper = document.querySelector(".modal_wrapper");
-var shadow = document.querySelector(".shadow");
+    var btn_done = document.querySelector(".btn_done");
+    var modal_wrapper = document.querySelector(".modal_wrapper");
+    var shadow = document.querySelector(".shadow");
 
-form_1_next_btn.addEventListener("click", function(){
-	form_1.style.display = "none";
-	form_2.style.display = "block";
+    form_1_next_btn.addEventListener("click", function () {
+        form_1.style.display = "none";
+        form_2.style.display = "block";
 
-	form_1_btns.style.display = "none";
-	form_2_btns.style.display = "flex";
+        form_1_btns.style.display = "none";
+        form_2_btns.style.display = "flex";
 
-	form_2_progessbar.classList.add("active");
-});
+        form_2_progessbar.classList.add("active");
+    });
 
-form_2_back_btn.addEventListener("click", function(){
-	form_1.style.display = "block";
-	form_2.style.display = "none";
+    form_2_back_btn.addEventListener("click", function () {
+        form_1.style.display = "block";
+        form_2.style.display = "none";
 
-	form_1_btns.style.display = "flex";
-	form_2_btns.style.display = "none";
+        form_1_btns.style.display = "flex";
+        form_2_btns.style.display = "none";
 
-	form_2_progessbar.classList.remove("active");
-});
+        form_2_progessbar.classList.remove("active");
+    });
 
-form_2_next_btn.addEventListener("click", function(){
-	form_2.style.display = "none";
-	form_3.style.display = "block";
+    form_2_next_btn.addEventListener("click", function () {
+        form_2.style.display = "none";
+        form_3.style.display = "block";
 
-	form_3_btns.style.display = "flex";
-	form_2_btns.style.display = "none";
+        form_3_btns.style.display = "flex";
+        form_2_btns.style.display = "none";
 
-	form_3_progessbar.classList.add("active");
-});
+        form_3_progessbar.classList.add("active");
+    });
 
-form_3_back_btn.addEventListener("click", function(){
-	form_2.style.display = "block";
-	form_3.style.display = "none";
+    form_3_back_btn.addEventListener("click", function () {
+        form_2.style.display = "block";
+        form_3.style.display = "none";
 
-	form_3_btns.style.display = "none";
-	form_2_btns.style.display = "flex";
+        form_3_btns.style.display = "none";
+        form_2_btns.style.display = "flex";
 
-	form_3_progessbar.classList.remove("active");
-});
+        form_3_progessbar.classList.remove("active");
+    });
 
-btn_done.addEventListener("click", function(){
-	modal_wrapper.classList.add("active");
-})
+    btn_done.addEventListener("click", function () {
+        modal_wrapper.classList.add("active");
+    })
 
-shadow.addEventListener("click", function(){
-	modal_wrapper.classList.remove("active");
-})
-    </script>
+    shadow.addEventListener("click", function () {
+        modal_wrapper.classList.remove("active");
+    })
+</script>
 
 </html>

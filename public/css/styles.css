@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
 :root{
-	--primary: #6b59d3;
+	--primary: #613f60;
 	--secondary: #bfc0c0;
 	--white: #fff;
 	--text-clr: #5b6475;
 	--header-clr: #25273d;
-	--next-btn-hover: #8577d2;
+	--next-btn-hover: #613f60;
 	--back-btn-hover: #8b8c8c;
 }
 
@@ -26,6 +26,11 @@ body{
 	font-size: 16px;
 	position: relative;
 }
+
+.button-link {
+    position: relative;
+    top: -20px;
+  }
 
 .wrapper{
 	width: 750px;
@@ -224,7 +229,7 @@ body{
 	width: 50px;
 	height: 50px;
 	background: var(--primary);
-	color: var(--white);
+	color: #ffffff;
 	border-radius: 50%;
 	display: flex;
 	align-items: center;
