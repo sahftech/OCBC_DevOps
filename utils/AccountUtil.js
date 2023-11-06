@@ -21,8 +21,8 @@ async function writeJSON(object, filename) {
 
 async function login(req, res) {
     try {
-        const email = req.body.email;
-        const password = req.body.password;
+        const access = req.body.access;
+        const pin = req.body.pin;
 
         const allAccounts = await readJSON('utils/accounts.json');
 
@@ -30,7 +30,7 @@ async function login(req, res) {
 
         for (var i = 0; i < allAccounts.length; i++) {
             var currUser = allAccounts[i];
-            if (currUser.email == email && currUser.password == password)
+            if (currUser.access == access && currUser.pin == pin)
                 validCredentials = true;
         }
 
@@ -46,7 +46,7 @@ async function login(req, res) {
 
 async function deposit (req, res) {
     try {
-        const email = req.body.email;
+        const access = req.body.access;
         const amount = req.body.amount;
         const desc = req.body.desc;
 
@@ -59,7 +59,7 @@ async function deposit (req, res) {
 
         for (var i = 0; i < allAccounts.length; i++) {
             var currUser = allAccounts[i];
-            if (currUser.email == email) {
+            if (currUser.access == access) {
                 currUser.transactions.push({
                     "datetime": formattedDate,
                     "type": "D",
@@ -84,7 +84,7 @@ async function deposit (req, res) {
 
 async function withdraw (req, res) {
     try {
-        const email = req.body.email;
+        const access = req.body.access;
         const amount = req.body.amount;
         const desc = req.body.desc;
 
@@ -97,7 +97,7 @@ async function withdraw (req, res) {
 
         for (var i = 0; i < allAccounts.length; i++) {
             var currUser = allAccounts[i];
-            if (currUser.email == email) {
+            if (currUser.access == access) {
                 currUser.transactions.push({
                     "datetime": formattedDate,
                     "type": "W",
@@ -141,7 +141,7 @@ async function transfer (req, res) {
 
         for (var i = 0; i < allAccounts.length; i++) {
             var currUser = allAccounts[i];
-            if (currUser.email == sender) {
+            if (currUser.access == sender) {
                 currUser.transactions.push({
                     "datetime": formattedDate,
                     "type": "W",
@@ -154,7 +154,7 @@ async function transfer (req, res) {
                 }
                 senderFound = true;
             }
-            if (currUser.email == receiver) {
+            if (currUser.access == receiver) {
                 currUser.transactions.push({
                     "datetime": formattedDate,
                     "type": "D",
@@ -179,7 +179,7 @@ async function transfer (req, res) {
 
 async function balance (req, res) {
     try {
-        const email = req.params.email;
+        const access = req.params.access;
 
         const allAccounts = await readJSON('utils/accounts.json');
 
@@ -187,7 +187,7 @@ async function balance (req, res) {
 
         for (var i = 0; i < allAccounts.length; i++) {
             var currUser = allAccounts[i];
-            if (currUser.email == email) { 
+            if (currUser.access == access) { 
                 index = i;
             }      
         }
