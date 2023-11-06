@@ -415,6 +415,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 1.25rem;
 }
 .service-section-header > * + * {
   margin-left: 1.25rem;
