@@ -20,7 +20,7 @@ function login() {
 
 		if (response.message == "Login successful!") {
 			sessionStorage.setItem("access", jsonData.access)
-            window.location.href = 'home.html';
+			window.location.href = 'home.html';
 		}
 		else {
 			document.getElementById("error").innerHTML = 'Invalid credentials!';
