@@ -177,9 +177,7 @@ textarea {
     margin-top: 1rem;
   }
 }
-/* .transfer-details div {
-  width: calc(100% / 3 - 1rem);
-} */
+
 @media (max-width: 1000px) {
   .transfer-details div {
     width: 100%;
@@ -274,7 +272,7 @@ textarea {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
-  transition: all 0.3s;
+  /* transition: all 0.3s; */
 }
 
 .modal-window:target {
@@ -296,7 +294,7 @@ textarea {
   max-width: 500px;
   margin-left: auto;
   margin-right: auto;
-  background-color: #fff;
+  background-color: var(--c-gray-800);
   border-radius: 16px;
   overflow: hidden;
   display: flex;
@@ -312,7 +310,7 @@ textarea {
 
 .modal-container-header {
   padding: 16px 32px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--c-gray-600);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -338,7 +336,7 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid var(--c-gray-600);
   gap: 12px;
   position: relative;
 }
@@ -352,7 +350,7 @@ textarea {
   right: 24px;
   height: 50px;
   flex-shrink: 0;
-  background-image: linear-gradient(to top, rgba(255, 255, 255, 0.75), transparent);
+  /* background-image: linear-gradient(to top, rgba(255, 255, 255, 0.75), transparent); */
   pointer-events: none;
 }
 
