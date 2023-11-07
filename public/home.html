@@ -112,7 +112,8 @@
                     <button class="flat-button">
                       Deposit
                     </button>
-                    <button class="flat-button">
+                    <!-- <a class="btn" href="#open-modal">Withdraw</a> -->
+                    <button onclick="location.href='#open-modal'" class="flat-button">
                       Withdraw
                     </button>
                   </div>
@@ -123,6 +124,38 @@
           </section>
         </div>
       </div>
+    </div>
+
+    <div id="open-modal" class="modal-window">
+      <div>
+        <article class="modal-container">
+          <header class="modal-container-header">
+            <h1 class="modal-container-title">
+              Withdraw
+            </h1>
+            <button onclick="location.href='#';" class="icon-button">
+              <i class="ph-x"></i>
+            </button>
+          </header>
+          <section class="modal-container-body">
+            <div class="search-field">
+              <input type="text" placeholder="Amount">
+            </div>
+            <div class="search-field">
+              <input type="text" placeholder="Description">
+            </div>
+          </section>
+          <footer class="modal-container-footer">
+            <button class="flat-button">
+              Withdraw
+            </button>
+            <button class="flat-button">
+              Cancel
+            </button>
+          </footer>
+        </article>
+      </div>
+      
     </div>
     <script src="https://unpkg.com/phosphor-icons"></script>
   </body>
