@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DVOPS - Resource Management Web App</title>
+    <title>Banking Website</title>
     <script src="js/register.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/ionicons@4.4.7/dist/css/ionicons.min.css">
-
+    <script src="https://kit.fontawesome.com/881e887b97.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 
@@ -50,12 +50,12 @@
                         </div>
                         <div class="input_wrap">
                             <label for="email">Identity Number</label>
-                            <input type="email" name="identity_number" class="input" id="identity_number">
+                            <input type="email" name="identity_number" class="input" id="nric">
                         </div>
-                        <div class="input_wrap">
+                        <!-- <div class="input_wrap">
                             <label for="date_of_birth">Date of Birth</label>
                             <input type="date" name="date_of_birth" class="input" id="date_of_birth">
-                        </div>
+                        </div> -->
                     </div>
                 </form>
             </div>
@@ -64,16 +64,16 @@
                 <form>
                     <div class="form_container">
                         <div class="input_wrap">
-                            <label for="user_name">User Name</label>
-                            <input type="text" name="User Name" class="input" id="user_name">
+                            <label for="user_name">Full Name</label>
+                            <input type="text" name="User Name" class="input" id="name">
                         </div>
                         <div class="input_wrap">
-                            <label for="first_name">NRIC</label>
-                            <input type="text" name="First Name" class="input" id="first_name">
+                            <label for="access_code">Access Code</label>
+                            <input type="text" name="Access Code" class="input" id="access">
                         </div>
                         <div class="input_wrap">
                             <label for="last_name">PIN</label>
-                            <input type="text" name="Last Name" class="input" id="last_name">
+                            <input type="number" name="PIN" class="input" id="pin">
                         </div>
                     </div>
                 </form>
@@ -84,15 +84,20 @@
                     <div class="form_container">
                         <div class="input_wrap">
                             <label for="email">Email</label>
-                            <input type="text" name="Email" class="input" id="Email">
+                            <input type="text" name="Email" class="input" id="email">
                         </div>
                         <div class="input_wrap">
-                            <label for="password">Password</label>
-                            <input type="password" name="password" class="input" id="password">
+                            <label for="password">Contact no.</label>
+                            <input type="number" name="phoneNo" class="input" id="contact">
                         </div>
                         <div class="input_wrap">
-                            <label for="confirm_password">Confirm Password</label>
-                            <input type="password" name="confirm_password" class="input" id="confirm_password">
+                            <label for="Transaction">Transaction Type</label>
+                            <select id="type" name="Transaction">
+                                <option value="option1">Please Select....</option>
+                                <option value="Savings">Savings Account</option>
+                                <option value="Currents">Currents Account</option>
+                                <!-- Add more options as needed -->
+                            </select>
                         </div>
                     </div>
                 </form>
@@ -121,7 +126,7 @@
     <div class="modal_wrapper">
         <div class="shadow"></div>
         <div class="success_wrap">
-            <span class="modal_icon"><ion-icon name="checkmark-sharp"></ion-icon></span>
+            <span class="modal_icon"><ion-icon name="checkmark-sharp"></ion-icon></span> 
             <p>You have successfully completed the process.</p>
         </div>
     </div>
