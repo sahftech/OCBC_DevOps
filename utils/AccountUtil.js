@@ -187,7 +187,7 @@ async function withdraw (req, res) {
 
 async function balance (req, res) {
     try {
-        const access = req.body.access;
+        const access = req.params.access;
 
         const allAccounts = await readJSON('utils/accounts.json');
 
