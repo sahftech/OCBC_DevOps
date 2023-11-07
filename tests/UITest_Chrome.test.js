@@ -4,10 +4,11 @@ const { describe, it } = require('mocha');
 const { expect } = require('chai');
 
 const chrome = require('selenium-webdriver/chrome');
-//const chromeOptions = new chrome.Options();
-//chromeOptions.addArguments('--headless');
-//const driver = new Builder().forBrowser('chrome').setChromeOptions(chromeOptions).build();
-const driver = new Builder().forBrowser('chrome').build();
+const chromeOptions = new chrome.Options();
+chromeOptions.addArguments('--headless');
+const driver = new Builder().forBrowser('chrome').setChromeOptions(chromeOptions).build();
+//const driver = new Builder().forBrowser('chrome').build();
+
 
 var server;
 before(async function () {
@@ -18,7 +19,7 @@ before(async function () {
     })
 });
 
-describe('Testing Index Screen', function () {
+describe('Testing Index Screen Chrome', function () {
 
     this.timeout(100000);
 
@@ -64,6 +65,6 @@ describe('Testing Index Screen', function () {
 
 
 after(async function () {
-    //await driver.quit();
+    await driver.quit();
     await server.close();
 });
