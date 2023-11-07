@@ -43,7 +43,7 @@ describe('Testing Index Screen', function () {
         await pinElement.sendKeys('123456');
     
         // Locate and interact with the Login button
-        const loginButton = await driver.findElement(By.id('login'));
+        const loginButton = await driver.findElement(By.id('loginButton'));
         await loginButton.click();
     
         // Wait for the page to be redirected

@@ -21,12 +21,13 @@ function register() {
     document.getElementById("error").innerHTML = "All fields are required!";
     return;
   } else if (jsonData.access == jsonData.name) {
-    document.getElementById("error").innerHTML = "Do not use Name for access code!";
+    document.getElementById("error").innerHTML =
+      "Do not use Name for access code!";
     return;
   }
 
   var request = new XMLHttpRequest();
 
   request.open("POST", "/register", true);
-  request.setRequestHeader('Content')
+  request.setRequestHeader("Content");
 }
