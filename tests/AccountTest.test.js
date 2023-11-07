@@ -396,7 +396,7 @@ describe("Testing Balance Function", () => {
 
   it('Empty access code', async () => {
     const req = {
-        body: {
+        params: {
             access: ""
         }
     };
