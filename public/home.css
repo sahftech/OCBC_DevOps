@@ -162,6 +162,21 @@ textarea {
   transition: 0.15s ease;
 }
 
+.transfer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-size: 0.875rem;
+}
+@media (max-width: 1000px) {
+  .transfer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+.transfer + * {
+  margin-top: 2rem;
+}
 
 .transfer-details {
   margin-left: 2rem;
