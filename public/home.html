@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>DVOPS - Resource Management Web App</title>
+    <title>Banking Website</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <script src="js/home.js"></script>
@@ -108,11 +108,12 @@
               <div class="payment">
                 <div class="payment-details">
                   <div>
-                    <span id="accountBalance">$ 2,110</span>
-                    <button class="flat-button">
+                    <span id="accountBalance">$ Placeholder</span>
+                    <button onclick="location.href='#open-modal-deposit'" class="flat-button">
                       Deposit
                     </button>
-                    <button class="flat-button">
+                    <!-- <a class="btn" href="#open-modal">Withdraw</a> -->
+                    <button onclick="location.href='#open-modal-withdraw'" class="flat-button">
                       Withdraw
                     </button>
                   </div>
@@ -124,6 +125,68 @@
         </div>
       </div>
     </div>
+
+    <div id="open-modal-withdraw" class="modal-window">
+      <div>
+        <article class="modal-container">
+          <header class="modal-container-header">
+            <h1 class="modal-container-title">
+              Withdraw
+            </h1>
+            <button onclick="location.href='#';" class="icon-button">
+              <i class="ph-x"></i>
+            </button>
+          </header>
+          <section class="modal-container-body">
+            <div class="search-field">
+              <input type="text" placeholder="Amount">
+            </div>
+            <div class="search-field">
+              <input type="text" placeholder="Description">
+            </div>
+          </section>
+          <footer class="modal-container-footer">
+            <button class="flat-button">
+              Withdraw
+            </button>
+            <button onclick="location.href='#';" class="flat-button">
+              Cancel
+            </button>
+          </footer>
+        </article>
+      </div>
+    </div>
+
+
+    <div id="open-modal-deposit" class="modal-window">
+      <div>
+        <article class="modal-container">
+          <header class="modal-container-header">
+            <h1 class="modal-container-title">
+              Deposit
+            </h1>
+            <button onclick="location.href='#';" class="icon-button">
+              <i class="ph-x"></i>
+            </button>
+          </header>
+          <section class="modal-container-body">
+            <div class="search-field">
+              <input type="text" placeholder="Amount">
+            </div>
+            <div class="search-field">
+              <input type="text" placeholder="Description">
+            </div>
+          </section>
+          <footer class="modal-container-footer">
+            <button class="flat-button">
+              Deposit
+            </button>
+            <button onclick="location.href='#';" class="flat-button">
+              Cancel
+            </button>
+          </footer>
+        </article>
+      </div>
     <script src="https://unpkg.com/phosphor-icons"></script>
   </body>
 </html>

@@ -18,7 +18,7 @@ function loadBalance() {
         document.getElementById('accountBalance').innerText = "$" + response.balance;
         
         var html = ''
-        for (var i = 0; i < transactions.length; i++)
+        for (var i = transactions.length-1; i > 0; i--)
         {
             var cssClass = ""
             var amountSign = ""
