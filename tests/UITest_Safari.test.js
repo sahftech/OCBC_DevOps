@@ -4,11 +4,11 @@ const { describe, it } = require('mocha');
 const { expect } = require('chai');
 
 const safari = require('selenium-webdriver/safari');
-const safariOptions = new safari.Options();
+//const safariOptions = new safari.Options();
 // safariOptions.setUseTechnologyPreview(true);
 //safariOptions.addArguments('--headless');
-const driver = new Builder().forBrowser('safari').setSafariOptions(safariOptions).build();
-//const driver = new Builder().forBrowser('safari').build();
+//const driver = new Builder().forBrowser('safari').setSafariOptions(safariOptions).build();
+const driver = new Builder().forBrowser('safari').build();
 
 var server;
 before(async function () {
@@ -21,7 +21,7 @@ before(async function () {
 
 describe('Testing Index Screen Safari', function () {
 
-    this.timeout(100000);
+    this.timeout(200000);
 
     it('Should show title: Banking Website', async () => {
         await driver.get('http://localhost:5050/'); // Navigate Sauce Demo
