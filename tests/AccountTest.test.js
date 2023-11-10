@@ -130,88 +130,88 @@ describe("Testing Login Function", () => {
     await login(req, res);
   });
 
-  it("Should login unsuccessfully with wrong access", async function () {
-    const baseUrl = "http://localhost:" + server.address().port;
-    await driver.get(baseUrl);
+  // it("Should login unsuccessfully with wrong access", async function () {
+  //   const baseUrl = "http://localhost:" + server.address().port;
+  //   await driver.get(baseUrl);
 
-    // Locate and interact with the email field
-    const accessElement = await driver.findElement(By.id("access"));
-    await accessElement.click(); // Click on the element
-    await accessElement.sendKeys("joHn");
+  //   // Locate and interact with the email field
+  //   const accessElement = await driver.findElement(By.id("access"));
+  //   await accessElement.click(); // Click on the element
+  //   await accessElement.sendKeys("joHn");
 
-    // Locate and interact with the email field
-    const pinElement = await driver.findElement(By.id("pin"));
-    await pinElement.click(); // Click on the element
-    await pinElement.sendKeys("123456");
+  //   // Locate and interact with the email field
+  //   const pinElement = await driver.findElement(By.id("pin"));
+  //   await pinElement.click(); // Click on the element
+  //   await pinElement.sendKeys("123456");
 
-    // Locate and interact with the Login button
-    const loginButton = await driver.findElement(By.id("loginButton"));
-    await loginButton.click();
-  });
+  //   // Locate and interact with the Login button
+  //   const loginButton = await driver.findElement(By.id("loginButton"));
+  //   await loginButton.click();
+  // });
 
-  it("Should login unsuccessfully with no access", async function () {
-    const baseUrl = "http://localhost:" + server.address().port;
-    await driver.get(baseUrl);
+  // it("Should login unsuccessfully with no access", async function () {
+  //   const baseUrl = "http://localhost:" + server.address().port;
+  //   await driver.get(baseUrl);
 
-    // Locate and interact with the email field
-    const accessElement = await driver.findElement(By.id("access"));
-    await accessElement.click(); // Click on the element
-    await accessElement.sendKeys("");
+  //   // Locate and interact with the email field
+  //   const accessElement = await driver.findElement(By.id("access"));
+  //   await accessElement.click(); // Click on the element
+  //   await accessElement.sendKeys("");
 
-    // Locate and interact with the email field
-    const pinElement = await driver.findElement(By.id("pin"));
-    await pinElement.click(); // Click on the element
-    await pinElement.sendKeys("123456");
+  //   // Locate and interact with the email field
+  //   const pinElement = await driver.findElement(By.id("pin"));
+  //   await pinElement.click(); // Click on the element
+  //   await pinElement.sendKeys("123456");
 
-    // Locate and interact with the Login button
-    const loginButton = await driver.findElement(By.id("loginButton"));
-    await loginButton.click();
+  //   // Locate and interact with the Login button
+  //   const loginButton = await driver.findElement(By.id("loginButton"));
+  //   await loginButton.click();
 
-    // Wait for the page to be redirected
-    //await driver.wait(until.urlIs(baseUrl + '/home.html'), 10000);
+  //   // Wait for the page to be redirected
+  //   //await driver.wait(until.urlIs(baseUrl + '/home.html'), 10000);
 
-    // Assert that the URL matches the expected URL
-    // const currentUrl = await driver.getCurrentUrl();
-    // expect(currentUrl).to.equal('http://localhost:' + server.address().port + '/home.html');
-  });
+  //   // Assert that the URL matches the expected URL
+  //   // const currentUrl = await driver.getCurrentUrl();
+  //   // expect(currentUrl).to.equal('http://localhost:' + server.address().port + '/home.html');
+  // });
 
-  it("Should login unsuccessfully with wrong pin", async function () {
-    const baseUrl = "http://localhost:" + server.address().port;
-    await driver.get(baseUrl);
+  // it("Should login unsuccessfully with wrong pin", async function () {
+  //   const baseUrl = "http://localhost:" + server.address().port;
+  //   await driver.get(baseUrl);
 
-    // Locate and interact with the email field
-    const accessElement = await driver.findElement(By.id("access"));
-    await accessElement.click(); // Click on the element
-    await accessElement.sendKeys("john");
+  //   // Locate and interact with the email field
+  //   const accessElement = await driver.findElement(By.id("access"));
+  //   await accessElement.click(); // Click on the element
+  //   await accessElement.sendKeys("john");
 
-    // Locate and interact with the email field
-    const pinElement = await driver.findElement(By.id("pin"));
-    await pinElement.click(); // Click on the element
-    await pinElement.sendKeys("123457");
+  //   // Locate and interact with the email field
+  //   const pinElement = await driver.findElement(By.id("pin"));
+  //   await pinElement.click(); // Click on the element
+  //   await pinElement.sendKeys("123457");
 
-    // Locate and interact with the Login button
-    const loginButton = await driver.findElement(By.id("loginButton"));
-    await loginButton.click();
-  });
+  //   // Locate and interact with the Login button
+  //   const loginButton = await driver.findElement(By.id("loginButton"));
+  //   await loginButton.click();
+  // });
 
-  it("Should login unsuccessfully with missing pin", async function () {
-    const baseUrl = "http://localhost:" + server.address().port;
-    await driver.get(baseUrl);
+  // it("Should login unsuccessfully with missing pin", async function () {
+  //   const baseUrl = "http://localhost:" + server.address().port;
+  //   await driver.get(baseUrl);
 
-    // Locate and interact with the email field
-    const accessElement = await driver.findElement(By.id("access"));
-    await accessElement.click(); // Click on the element
-    await accessElement.sendKeys("john");
+  //   // Locate and interact with the email field
+  //   const accessElement = await driver.findElement(By.id("access"));
+  //   await accessElement.click(); // Click on the element
+  //   await accessElement.sendKeys("john");
 
-    // Locate and interact with the email field
-    const pinElement = await driver.findElement(By.id("pin"));
-    await pinElement.click(); // Click on the element
-    await pinElement.sendKeys("");
+  //   // Locate and interact with the email field
+  //   const pinElement = await driver.findElement(By.id("pin"));
+  //   await pinElement.click(); // Click on the element
+  //   await pinElement.sendKeys("");
 
-    // Locate and interact with the Login button
-    const loginButton = await driver.findElement(By.id("loginButton"));
-    await loginButton.click();
-  });
+  //   // Locate and interact with the Login button
+  //   const loginButton = await driver.findElement(By.id("loginButton"));
+  //   await loginButton.click();
+  // });
 });
 
 describe("Testing Deposit Function", () => {

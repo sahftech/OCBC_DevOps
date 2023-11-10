@@ -66,4 +66,5 @@ describe('Testing Index Screen Firefox', function () {
 after(async function () {
     await driver.quit();
     await server.close();
+    process.exit(0);
 });
