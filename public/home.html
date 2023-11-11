@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <script src="js/home.js"></script>
+    <script src="js/transaction.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"/>
     <link rel="stylesheet" href="home.css"/>
   </head>
@@ -60,7 +61,7 @@
           <nav class="navigation">
             <a href="#">
               <i class="ph-browsers"></i>
-              <a href="dashboard.html" class="button-link" style="font-size: larger;">dashboard</a>
+              <span>Dashboard</span>
             </a>
             <a href="#">
               <i class="ph-check-square"></i>
@@ -139,14 +140,14 @@
           </header>
           <section class="modal-container-body">
             <div class="search-field">
-              <input type="text" placeholder="Amount">
+              <input id="withdraw-amount" type="text" placeholder="Amount">
             </div>
             <div class="search-field">
-              <input type="text" placeholder="Description">
+              <input id="withdraw-desciption" type="text" placeholder="Description">
             </div>
           </section>
           <footer class="modal-container-footer">
-            <button class="flat-button">
+            <button class="flat-button" onclick="withdraw()">
               Withdraw
             </button>
             <button onclick="location.href='#';" class="flat-button">
@@ -171,14 +172,14 @@
           </header>
           <section class="modal-container-body">
             <div class="search-field">
-              <input type="text" placeholder="Amount">
+              <input id="deposit-amount" type="text" placeholder="Amount">
             </div>
             <div class="search-field">
-              <input type="text" placeholder="Description">
+              <input id="deposit-desciption" type="text" placeholder="Description">
             </div>
           </section>
           <footer class="modal-container-footer">
-            <button class="flat-button">
+            <button class="flat-button" onclick="deposit()">
               Deposit
             </button>
             <button onclick="location.href='#';" class="flat-button">
