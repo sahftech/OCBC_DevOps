@@ -8,12 +8,96 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/ionicons@4.4.7/dist/css/ionicons.min.css">
     <script src="https://kit.fontawesome.com/881e887b97.js" crossorigin="anonymous"></script>
+    <!-- //<link rel="stylesheet" href="./css/register.css"> -->
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 
 <body>
 
-    <div class="wrapper">
+    <!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="style.css">
+     
+    <!----===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+   <title>Responsive Regisration Form </title>
+</head>
+<body>
+    <div class="container">
+        <header>Registration</header>
+
+        <form action="#">
+            <div class="form first">
+                <div class="details personal">
+                    <span class="title">Personal Details</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Name</label>
+                            <input type="text" id="name" placeholder="Enter your name"  required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Email</label>
+                            <input type="text" id="email" placeholder="Enter your email"  required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Mobile Number</label>
+                            <input type="number" id="contact" placeholder="Enter mobile number"  required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>NRIC number</label>
+                            <input type="text" id="nric" placeholder="Enter NRIC number" required>
+                            <!-- <input type="number" id="nric" placeholder="Enter NRIC number" required> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="details ID">
+                    <span class="title">Identity Details</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Access Code</label>
+                            <input type="text" id="access" placeholder="Enter Access Code"  required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Pin Code</label>
+                            <input type="number" id="pin"ƒ placeholder="Enter Pin Code"  required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="account_type">Bank Account Type:</label>
+                            <select class="form-control" id="type" name="account_type" required>
+                                <option value="Savings">Savings</option>
+                                <option value="Current">Current</option>
+                            </select>
+                        </div>
+                        
+                    </div>
+
+                    <button type="button" onclick="register()" id="registerButton">Register</button>
+                </div> 
+            </div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+    <!-- <div class="wrapper">
         <div class="header">
             <ul>
                 <li class="active form_1_progessbar">
@@ -45,17 +129,17 @@
                                 <option value="option2">Singaporean/PR NRIC</option>
                                 <option value="option3">Malaysia IC</option>
                                 <option value="option3">Passport</option>
-                                <!-- Add more options as needed -->
+                                 Add more options as needed 
                             </select>
                         </div>
                         <div class="input_wrap">
                             <label for="email">Identity Number</label>
                             <input type="email" name="identity_number" class="input" id="nric">
                         </div>
-                        <!-- <div class="input_wrap">
+                        <div class="input_wrap">
                             <label for="date_of_birth">Date of Birth</label>
                             <input type="date" name="date_of_birth" class="input" id="date_of_birth">
-                        </div> -->
+                        </div> 
                     </div>
                 </form>
             </div>
@@ -96,7 +180,7 @@
                                 <option value="option1">Please Select....</option>
                                 <option value="Savings">Savings Account</option>
                                 <option value="Currents">Currents Account</option>
-                                <!-- Add more options as needed -->
+                                
                             </select>
                         </div>
                     </div>
@@ -118,7 +202,7 @@
             <div class="common_btns form_3_btns" style="display: none;">
                 <button type="button" class="btn_back"><span class="icon"><ion-icon
                             name="arrow-back-sharp"></ion-icon></span>Back</button>
-                <button type="button" class="btn_done">Done</button>
+                <button type="button" class="btn_done" onclick="register()">Done</button>
             </div>
         </div>
     </div>
@@ -131,7 +215,7 @@
         </div>
     </div>
 
-    <script type="text/javascript" src="scripts.js"></script>
+    <script type="text/javascript" src="scripts.js"></script> -->
 
 </body>
 <script>

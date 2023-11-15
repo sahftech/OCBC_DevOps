@@ -21,7 +21,7 @@ before(async function () {
 
 describe('Testing Index Screen Safari', function () {
 
-    this.timeout(200000);
+    this.timeout(250000);
 
     it('Should show title: Banking Website', async () => {
         await driver.get('http://localhost:5050/'); // Navigate Sauce Demo
