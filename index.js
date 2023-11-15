@@ -11,7 +11,7 @@ app.use(express.static("./public"));
 
 const { login, register, deposit, withdraw, balance,  } = require('./utils/AccountUtil')
 app.post('/login', login);
-app.post('/register', register);
+// app.post('/register', register);
 app.post('/deposit', deposit);
 app.post('/withdraw', withdraw);
 // app.post('/transfer', transfer);

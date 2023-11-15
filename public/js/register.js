@@ -32,7 +32,7 @@ function register() {
 
   request.onload = function () {
     response = JSON.parse(request.responseText);
-    
+
     console.log(response);
     if (response.message == undefined) {
       window.location.href = "index.html";

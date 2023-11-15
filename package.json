@@ -20,7 +20,7 @@
   },
   "scripts": {
     "test": "nyc mocha tests/*.test.js",
-    "start" : "node index.js"
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
