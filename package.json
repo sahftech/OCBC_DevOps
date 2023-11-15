@@ -20,6 +20,7 @@
   },
   "scripts": {
     "test": "nyc mocha tests/*.test.js",
+    "testfirefox": "nyc mocha tests/UITest_Firefox.test.js",
     "start" : "node index.js"
   },
   "author": "",

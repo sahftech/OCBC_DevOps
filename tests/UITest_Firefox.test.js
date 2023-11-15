@@ -56,9 +56,168 @@ describe('Testing Index Screen Firefox', function () {
     });
 
 
+});
 
+describe("Testing Home Screen Firefox", function () {
+    this.timeout(100000);
+
+    it("Should Show Account Name", async function () {
+        const baseUrl = 'http://localhost:' + server.address().port;
+        await driver.get(baseUrl);
     
+        // Locate and interact with the email field
+        const accessElement = await driver.findElement(By.id('access'));
+        await accessElement.click(); // Click on the element
+        await accessElement.sendKeys('john');
+    
+        // Locate and interact with the email field
+        const pinElement = await driver.findElement(By.id('pin'));
+        await pinElement.click(); // Click on the element
+        await pinElement.sendKeys('123456');
+    
+        // Locate and interact with the Login button
+        const loginButton = await driver.findElement(By.id('loginButton'));
+        await loginButton.click();
+    
+        // Wait for the page to be redirected
+        await driver.wait(until.urlIs(baseUrl + '/home.html'), 10000);
+        
+        // Assert that the Account Name matches the expected Account Name
+        const accountName = await driver.findElement(By.id('accountName'));
+        expect(await accountName.getText()).to.equal('John Tan');
+    });
 
+    it("Should show Account Email", async function () {
+        const baseUrl = 'http://localhost:' + server.address().port;
+        await driver.get(baseUrl);
+
+        // Locate and interact with the email field
+        const accessElement = await driver.findElement(By.id('access'));
+        await accessElement.click(); // Click on the element
+        await accessElement.sendKeys('john');
+    
+        // Locate and interact with the email field
+        const pinElement = await driver.findElement(By.id('pin'));
+        await pinElement.click(); // Click on the element
+        await pinElement.sendKeys('123456');
+    
+        // Locate and interact with the Login button
+        const loginButton = await driver.findElement(By.id('loginButton'));
+        await loginButton.click();
+    
+        // Wait for the page to be redirected
+        await driver.wait(until.urlIs(baseUrl + '/home.html'), 10000);
+        
+        // Assert that the Account Email matches the expected Account Email
+        const accountEmail = await driver.findElement(By.id('accountEmail'));
+        expect(await accountEmail.getText()).to.equal('john@gmail.com');
+    });
+
+    it("Should Open Deposit Modal", async function () {
+        const baseUrl = 'http://localhost:' + server.address().port;
+        await driver.get(baseUrl);
+
+        // Locate and interact with the email field
+        const accessElement = await driver.findElement(By.id('access'));
+        await accessElement.click(); // Click on the element
+        await accessElement.sendKeys('john');
+    
+        // Locate and interact with the email field
+        const pinElement = await driver.findElement(By.id('pin'));
+        await pinElement.click(); // Click on the element
+        await pinElement.sendKeys('123456');
+    
+        // Locate and interact with the Login button
+        const loginButton = await driver.findElement(By.id('loginButton'));
+        await loginButton.click();
+    
+        // Wait for the page to be redirected
+        await driver.wait(until.urlIs(baseUrl + '/home.html'), 10000);
+
+        // Locate and interact with the deposit button
+        const depositButton = await driver.findElement(By.id('open-deposit'));
+        await depositButton.click();
+
+        // Check if modal is shown
+        const modal = await driver.findElement(By.id('open-modal-deposit'));
+        expect(await modal.isDisplayed()).to.equal(true);
+
+    });
+
+    it("Should Open Withdraw Modal", async function () {
+        const baseUrl = 'http://localhost:' + server.address().port;
+        await driver.get(baseUrl);
+
+        // Locate and interact with the email field
+        const accessElement = await driver.findElement(By.id('access'));
+        await accessElement.click(); // Click on the element
+        await accessElement.sendKeys('john');
+    
+        // Locate and interact with the email field
+        const pinElement = await driver.findElement(By.id('pin'));
+        await pinElement.click(); // Click on the element
+        await pinElement.sendKeys('123456');
+    
+        // Locate and interact with the Login button
+        const loginButton = await driver.findElement(By.id('loginButton'));
+        await loginButton.click();
+    
+        // Wait for the page to be redirected
+        await driver.wait(until.urlIs(baseUrl + '/home.html'), 10000);
+
+        // Locate and interact with the deposit button
+        const depositButton = await driver.findElement(By.id('open-withdraw'));
+        await depositButton.click();
+
+        // Check if modal is shown
+        const modal = await driver.findElement(By.id('open-modal-withdraw'));
+        expect(await modal.isDisplayed()).to.equal(true);
+
+    });
+
+    // it("Should show transaction on deposit", async function () {
+    //     const baseUrl = 'http://localhost:' + server.address().port;
+    //     await driver.get(baseUrl);
+
+    //     // Locate and interact with the email field
+    //     const accessElement = await driver.findElement(By.id('access'));
+    //     await accessElement.click(); // Click on the element
+    //     await accessElement.sendKeys('john');
+    
+    //     // Locate and interact with the email field
+    //     const pinElement = await driver.findElement(By.id('pin'));
+    //     await pinElement.click(); // Click on the element
+    //     await pinElement.sendKeys('123456');
+    
+    //     // Locate and interact with the Login button
+    //     const loginButton = await driver.findElement(By.id('loginButton'));
+    //     await loginButton.click();
+    
+    //     // Wait for the page to be redirected
+    //     await driver.wait(until.urlIs(baseUrl + '/home.html'), 10000);
+
+    //     // Locate and interact with the deposit button
+    //     const depositButton = await driver.findElement(By.id('open-deposit'));
+    //     await depositButton.click();
+
+    //     // Locate and input amount
+    //     const amount = await driver.findElement(By.id('deposit-amount'));
+    //     await amount.click(); // Click on the element
+    //     await amount.sendKeys('100');
+
+    //     // Locate and input description
+    //     const description = await driver.findElement(By.id('deposit-desciption'));
+    //     await description.click(); // Click on the element
+    //     await description.sendKeys('Test Deposit');
+
+    //     // Locate and interact with the deposit button
+    //     const deposit = await driver.findElement(By.id('deposit-btn'));
+    //     await deposit.click();
+
+    //     // Check if transaction is added
+    //     const transaction = await driver.findElement(By.css('#transactions > div:nth-child(1) > div:nth-child(1) > dl:nth-child(1) > div:nth-child(1) > dt:nth-child(1)'));
+    //     expect(await transaction.getText()).to.equal('100');
+    // });
 });
 
 

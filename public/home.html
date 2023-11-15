@@ -98,7 +98,7 @@
                 Toggle search
               </button>
             </div>
-              <div class="transfer-box">
+              <div id="transactions" class="transfer-box">
               </div>
           </section>
         </div>
@@ -110,11 +110,11 @@
                 <div class="payment-details">
                   <div>
                     <span id="accountBalance">$ Placeholder</span>
-                    <button onclick="location.href='#open-modal-deposit'" class="flat-button">
+                    <button id="open-deposit" onclick="location.href='#open-modal-deposit'" class="flat-button">
                       Deposit
                     </button>
                     <!-- <a class="btn" href="#open-modal">Withdraw</a> -->
-                    <button onclick="location.href='#open-modal-withdraw'" class="flat-button">
+                    <button id="open-withdraw" onclick="location.href='#open-modal-withdraw'" class="flat-button">
                       Withdraw
                     </button>
                   </div>
@@ -179,10 +179,10 @@
             </div>
           </section>
           <footer class="modal-container-footer">
-            <button class="flat-button" onclick="deposit()">
+            <button id="deposit-btn" class="flat-button" onclick="deposit()">
               Deposit
             </button>
-            <button onclick="location.href='#';" class="flat-button">
+            <button id="deposit-cancel" onclick="location.href='#';" class="flat-button">
               Cancel
             </button>
           </footer>
