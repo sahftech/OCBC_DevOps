@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static("./public"));
 
-const { login, register, deposit, withdraw, balance,  } = require('./utils/AccountUtil')
+const { login, deposit, withdraw, balance,  } = require('./utils/AccountUtil')
 app.post('/login', login);
 // app.post('/register', register);
 app.post('/deposit', deposit);

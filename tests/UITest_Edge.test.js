@@ -4,11 +4,13 @@ const { describe, it } = require('mocha');
 const { expect } = require('chai');
 const { uiTest } = require('./UITest.js');
 
-const firefox = require('selenium-webdriver/firefox');
-const firefoxOptions = new firefox.Options();
-firefoxOptions.addArguments('--headless');
-const driver = new Builder().forBrowser('firefox').setChromeOptions(firefoxOptions).build();
-//const driver = new Builder().forBrowser('firefox').build();
+
+const edge = require('selenium-webdriver/edge');
+const edgeOptions = new edge.Options();
+// edgeOptions.addArguments('--headless');
+edgeOptions.addArguments("--window-size=1920,1080")
+const driver = new Builder().forBrowser('MicrosoftEdge').setEdgeOptions(edgeOptions).build();
+
 
 uiTest(driver);
 // var server;
@@ -20,7 +22,7 @@ uiTest(driver);
 //     })
 // });
 
-// describe('Testing Index Screen Firefox', function () {
+// describe('Testing Index Screen Edge', function () {
 
 //     this.timeout(100000);
 
@@ -60,7 +62,7 @@ uiTest(driver);
 
 // });
 
-// describe("Testing Home Screen Firefox", function () {
+// describe("Testing Home Screen Edge", function () {
 //     this.timeout(100000);
 
 //     it("Should Show Account Name", async function () {
