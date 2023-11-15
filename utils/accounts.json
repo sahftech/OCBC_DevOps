@@ -7,7 +7,7 @@
     "pin": "123456",
     "type": "Savings",
     "contact": 97888222,
-    "balance": 407,
+    "balance": 607,
     "id": "1696158023514709",
     "transactions": [
       {
@@ -81,6 +81,12 @@
         "type": "W",
         "desc": "food",
         "amount": 50
+      },
+      {
+        "datetime": "2023-11-14 10:51:21",
+        "type": "D",
+        "desc": "Salary",
+        "amount": 200
       }
     ]
   },
