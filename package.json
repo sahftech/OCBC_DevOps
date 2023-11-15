@@ -20,8 +20,7 @@
   },
   "scripts": {
     "test": "nyc mocha tests/*.test.js",
-    "test:": "nyc mocha tests/*.test.js --exclude tests/UITest_Safari.test.js --exclude tests/UITest_Windows.test.js",
-    "test:windows": "nyc mocha tests/UITest_Windows.test.js",
+    "test:windows": "nyc mocha tests/*.test.js --exclude tests/UITest_Safari.test.js --exclude tests/UITest_Windows.test.js",
     "test:chrome": "nyc mocha tests/UITest_Chrome.test.js",
     "test:edge": "nyc mocha tests/UITest_Edge.test.js",
     "test:firefox": "nyc mocha tests/UITest_Firefox.test.js",
