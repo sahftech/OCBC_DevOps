@@ -50,7 +50,6 @@ function uiTest(driver) {
 
     });
 
-
   });
 
   describe("Testing Home Screen", function () {
