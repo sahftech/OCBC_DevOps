@@ -3,10 +3,8 @@ const { uiTest } = require('./UITest.js');
 
 const chrome = require('selenium-webdriver/chrome');
 const chromeOptions = new chrome.Options();
-// chromeOptions.addArguments('--headless');
 chromeOptions.addArguments("--window-size=1920,1080")
 const driver = new Builder().forBrowser('chrome').setChromeOptions(chromeOptions).build();
-//const driver = new Builder().forBrowser('chrome').build();
 
 
 uiTest(driver);
