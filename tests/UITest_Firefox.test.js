@@ -33,8 +33,7 @@ describe('Testing Index Screen', function () {
     await driver.get(baseUrl);
 
     // Locate and interact with the email field
-    const accessElement = await driver.findElement(By.id('access')).click();
-    await accessElement.sendKeys('john');
+    await driver.findElement(By.id('access')).click().sendKeys('john');
 
     // Locate and interact with the email field
     const pinElement = await driver.findElement(By.id('pin'));
@@ -46,11 +45,11 @@ describe('Testing Index Screen', function () {
     await loginButton.click();
 
     // Wait for the page to be redirected
-    await driver.wait(until.urlIs(baseUrl + '/home.html'), 10000);
+    // await driver.wait(until.urlIs(baseUrl + '/home.html'), 10000);
 
     // Assert that the URL matches the expected URL
     const currentUrl = await driver.getCurrentUrl();
-    expect(currentUrl).to.equal('http://localhost:' + server.address().port + '/home.html');
+    expect(currentUrl).to.equal('http://localhost:5050/home.html');
 
   });
 
