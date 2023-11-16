@@ -1,4 +1,4 @@
-name: Automatic Testing for Resource Management Web App
+name: Automatic Testing for Bank App
 on:
   push:
     branches:
@@ -18,4 +18,4 @@ jobs:
       - name: Install dependencies for based on package.json
         run: npm install
       - name: Run tests in "tests" folder
-        run: npm test
+        run: npm test:windows
