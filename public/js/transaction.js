@@ -3,8 +3,8 @@ function deposit() {
   
   var jsonData = new Object();
   jsonData.access = sessionStorage.getItem("access");
-  jsonData.amount = document.getElementById("amount").value;
-  jsonData.desc = document.getElementById("desc").value;
+  jsonData.amount = document.getElementById("deposit-amount").value;
+  jsonData.desc = document.getElementById("deposit-desciption").value;
   
   var request = new XMLHttpRequest();
   
@@ -31,8 +31,8 @@ function withdraw() {
   
   var jsonData = new Object();
   jsonData.access = sessionStorage.getItem("access");
-  jsonData.amount = document.getElementById("amount").value;
-  jsonData.desc = document.getElementById("desc").value;
+  jsonData.amount = document.getElementById("withdraw-amount").value;
+  jsonData.desc = document.getElementById("withdraw-desciption").value;
   
   var request = new XMLHttpRequest();
   
@@ -42,7 +42,7 @@ function withdraw() {
   request.onload = function() {
     response = JSON.parse(request.responseText);
 
-    if (response.message == "Withdraw successful!") {
+    if (response.message == "Withdrawal successful!") {
       window.location.href = 'home.html';
     }
     else {
