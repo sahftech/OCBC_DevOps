@@ -17,5 +17,9 @@ jobs:
         run: rm -rf /home/runner/work/resource-mgmt/resource-mgmt/node_modules/*
       - name: Install dependencies for based on package.json
         run: npm install
-      - name: Run tests in "tests" folder
-        run: npm run test:windows
+      - name: Run firefox test
+        run: npm run test:firefox
+      - name: Run chrome test
+        run: npm run test:chrome
+      - name: Run edge test
+        run: npm run test:edge
