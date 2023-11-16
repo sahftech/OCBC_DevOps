@@ -11,6 +11,7 @@ const safari = require('selenium-webdriver/safari');
 //const driver = new Builder().forBrowser('safari').setSafariOptions(safariOptions).build();
 const driver = new Builder().forBrowser('safari').build();
 
+
 uiTest(driver);
 // var server;
 // before(async function () {
