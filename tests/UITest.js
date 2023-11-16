@@ -134,11 +134,11 @@ function uiTest(driver) {
     });
   });
 
-  // after(async function () {
-  //   await driver.quit();
-  //   await server.close();
-  //   process.exit(0);
-  // });
+  after(async function () {
+    await driver.quit();
+    await server.close();
+    process.exit(0);
+  });
 }
 
 module.exports = { uiTest };
