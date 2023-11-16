@@ -48,7 +48,7 @@ function loadBalance() {
             var html = "<div class='transfer'" + ">" +
                         "<dl class='transfer-details'>" +
                         "<div>" +
-                        "<dt>" + amountSign + transactions[i].amount + "</dt>" +
+                        "<dt id='transaction-amount'>" + amountSign + transactions[i].amount + "</dt>" +
                         "</div>" +
                         "<div>" +
                         "<dt>" + transactions[i].desc + "</dt>" +

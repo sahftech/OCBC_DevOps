@@ -9,7 +9,7 @@
     ],
     "exclude": [],
     "reporter": [
-      "html"
+      "text-summary", "html"
     ],
     "all": true,
     "check-coverage": true,
@@ -19,6 +19,9 @@
     "statements": 80
   },
   "scripts": {
+    "test:windows": "nyc mocha tests/*.test.js --exclude tests/UITest_Safari.test.js",
+    "test:mac": "nyc mocha tests/*.test.js --exclude tests/UITest_Edge.test.js",
+    "test:safari": "nyc mocha tests/UITest_Safari.test.js",
     "test": "nyc mocha tests/*.test.js",
     "start" : "node index.js"
   },

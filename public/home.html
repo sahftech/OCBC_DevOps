@@ -43,10 +43,10 @@
         </div>
         <div class="app-header-actions">
           <button class="user-profile">
-            <span id="accountName">PlaceHolder</span>
+            <span id="accountName"></span>
           </button>
           <div class="app-header-actions-buttons">
-            <span id="accountEmail">PlaceHolder@email.com</span>
+            <span id="accountEmail"></span>
           </div>
         </div>
         <div class="app-header-mobile">
@@ -98,7 +98,7 @@
                 Toggle search
               </button>
             </div>
-              <div class="transfer-box">
+              <div id="transactions" class="transfer-box">
               </div>
           </section>
         </div>
@@ -110,11 +110,11 @@
                 <div class="payment-details">
                   <div>
                     <span id="accountBalance">$ Placeholder</span>
-                    <button onclick="location.href='#open-modal-deposit'" class="flat-button">
+                    <button id="open-deposit" onclick="location.href='#open-modal-deposit'" class="flat-button">
                       Deposit
                     </button>
                     <!-- <a class="btn" href="#open-modal">Withdraw</a> -->
-                    <button onclick="location.href='#open-modal-withdraw'" class="flat-button">
+                    <button id="open-withdraw" onclick="location.href='#open-modal-withdraw'" class="flat-button">
                       Withdraw
                     </button>
                   </div>
@@ -147,7 +147,7 @@
             </div>
           </section>
           <footer class="modal-container-footer">
-            <button class="flat-button" onclick="withdraw()">
+            <button id="withdraw-btn" class="flat-button" onclick="withdraw()">
               Withdraw
             </button>
             <button onclick="location.href='#';" class="flat-button">
@@ -179,10 +179,10 @@
             </div>
           </section>
           <footer class="modal-container-footer">
-            <button class="flat-button" onclick="deposit()">
+            <button id="deposit-btn" class="flat-button" onclick="deposit()">
               Deposit
             </button>
-            <button onclick="location.href='#';" class="flat-button">
+            <button id="deposit-cancel" onclick="location.href='#';" class="flat-button">
               Cancel
             </button>
           </footer>
