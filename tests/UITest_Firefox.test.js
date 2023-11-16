@@ -29,8 +29,8 @@ describe('Testing Index Screen', function () {
   });
 
   it('Should login successfully', async function () {
-    const baseUrl = 'http://localhost:' + server.address().port;
-    await driver.get(baseUrl);
+    // const baseUrl = 'http://localhost:' + server.address().port;
+    // await driver.get(baseUrl);
 
     // Locate and interact with the email field
     const accessElement = await driver.findElement(By.id('access'));
