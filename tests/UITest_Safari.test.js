@@ -9,7 +9,7 @@ const safari = require("selenium-webdriver/safari");
 // safariOptions.setUseTechnologyPreview(true);
 //safariOptions.addArguments('--headless');
 //const driver = new Builder().forBrowser('safari').setSafariOptions(safariOptions).build();
-const driver = new Builder().forBrowser("safari").build();
+const driver = new Builder().forBrowser('safari').build();
 
 //uiTest(driver);
 var server;
