@@ -18,13 +18,6 @@ before(async function () {
 });
 
 
-after(async function () {
-  await driver.quit();
-  server.close();
-  process.exit(0);
-})
-
-
 describe('Testing Index Screen', function () {
 
   this.timeout(100000);

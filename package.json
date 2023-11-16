@@ -22,7 +22,7 @@
     "test:windows": "nyc mocha tests/*.test.js --exclude tests/UITest_Safari.test.js",
     "test:mac": "nyc mocha tests/*.test.js --exclude tests/UITest_Edge.test.js",
     "test:safari": "nyc mocha tests/UITest_Safari.test.js",
-    "test:firefox": "nyc mocha tests/UITest_Firefox.test.js --timeout 5000",
+    "test:firefox": "nyc mocha tests/UITest_Firefox.test.js --exit",
     "test:chrome": "nyc mocha tests/UITest_Chrome.test.js",
     "test:edge": "nyc mocha tests/UITest_Edge.test.js",
     "test:backend": "nyc mocha tests/AccountTest.test.js",
