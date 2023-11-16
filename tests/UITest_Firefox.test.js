@@ -17,6 +17,12 @@ before(async function () {
   })
 });
 
+after(async function () {
+  await driver.quit();
+  await server.close();
+  process.exit(0);
+});
+
 describe('Testing Index Screen', function () {
 
   this.timeout(100000);
@@ -136,10 +142,4 @@ describe("Testing Home Screen", function () {
     const modal = await driver.findElement(By.id('open-modal-withdraw'));
     expect(await modal.isDisplayed()).to.equal(false);
   });
-});
-
-after(async function () {
-  await driver.quit();
-  await server.close();
-  process.exit(0);
 });
