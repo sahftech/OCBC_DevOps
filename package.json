@@ -19,7 +19,7 @@
     "statements": 80
   },
   "scripts": {
-    "test:windows": "nyc mocha tests/*.test.js --exclude tests/UITest_Safari.test.js",
+    "test:windows": "nyc mocha tests/*.test.js --exclude tests/UITest_Safari.test.js --exit",
     "test:mac": "nyc mocha tests/*.test.js --exclude tests/UITest_Edge.test.js",
     "test:safari": "nyc mocha tests/UITest_Safari.test.js",
     "test:firefox": "nyc mocha tests/UITest_Firefox.test.js",
