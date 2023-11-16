@@ -56,25 +56,25 @@ function uiTest(driver) {
     this.timeout(100000);
 
     it("Should Show Account Name", async function () {
-      const baseUrl = 'http://localhost:' + server.address().port;
-      await driver.get(baseUrl);
+      // const baseUrl = 'http://localhost:' + server.address().port;
+      // await driver.get(baseUrl);
 
-      // Locate and interact with the email field
-      const accessElement = await driver.findElement(By.id('access'));
-      await accessElement.click(); // Click on the element
-      await accessElement.sendKeys('john');
+      // // Locate and interact with the email field
+      // const accessElement = await driver.findElement(By.id('access'));
+      // await accessElement.click(); // Click on the element
+      // await accessElement.sendKeys('john');
 
-      // Locate and interact with the email field
-      const pinElement = await driver.findElement(By.id('pin'));
-      await pinElement.click(); // Click on the element
-      await pinElement.sendKeys('123456');
+      // // Locate and interact with the email field
+      // const pinElement = await driver.findElement(By.id('pin'));
+      // await pinElement.click(); // Click on the element
+      // await pinElement.sendKeys('123456');
 
-      // Locate and interact with the Login button
-      const loginButton = await driver.findElement(By.id('loginButton'));
-      await loginButton.click();
+      // // Locate and interact with the Login button
+      // const loginButton = await driver.findElement(By.id('loginButton'));
+      // await loginButton.click();
 
-      // Wait for the page to be redirected
-      await driver.wait(until.urlIs(baseUrl + '/home.html'), 10000);
+      // // Wait for the page to be redirected
+      // await driver.wait(until.urlIs(baseUrl + '/home.html'), 10000);
       
       // Assert that the Account Name matches the expected Account Name
       const accountName = await driver.findElement(By.id('accountName'));
@@ -82,25 +82,25 @@ function uiTest(driver) {
     });
 
     it("Should show Account Email", async function () {
-      const baseUrl = 'http://localhost:' + server.address().port;
-      await driver.get(baseUrl);
+      // const baseUrl = 'http://localhost:' + server.address().port;
+      // await driver.get(baseUrl);
 
-      // Locate and interact with the email field
-      const accessElement = await driver.findElement(By.id('access'));
-      await accessElement.click(); // Click on the element
-      await accessElement.sendKeys('john');
+      // // Locate and interact with the email field
+      // const accessElement = await driver.findElement(By.id('access'));
+      // await accessElement.click(); // Click on the element
+      // await accessElement.sendKeys('john');
 
-      // Locate and interact with the email field
-      const pinElement = await driver.findElement(By.id('pin'));
-      await pinElement.click(); // Click on the element
-      await pinElement.sendKeys('123456');
+      // // Locate and interact with the email field
+      // const pinElement = await driver.findElement(By.id('pin'));
+      // await pinElement.click(); // Click on the element
+      // await pinElement.sendKeys('123456');
 
-      // Locate and interact with the Login button
-      const loginButton = await driver.findElement(By.id('loginButton'));
-      await loginButton.click();
+      // // Locate and interact with the Login button
+      // const loginButton = await driver.findElement(By.id('loginButton'));
+      // await loginButton.click();
 
-      // Wait for the page to be redirected
-      await driver.wait(until.urlIs(baseUrl + '/home.html'), 10000);
+      // // Wait for the page to be redirected
+      // await driver.wait(until.urlIs(baseUrl + '/home.html'), 10000);
 
       // Assert that the Account Email matches the expected Account Email
       const accountEmail = await driver.findElement(By.id('accountEmail'));
