@@ -25,6 +25,7 @@
     "test:firefox": "nyc mocha tests/UITest_Firefox.test.js",
     "test:chrome": "nyc mocha tests/UITest_Chrome.test.js",
     "test:edge": "nyc mocha tests/UITest_Edge.test.js",
+    "test:backend": "nyc mocha tests/AccountTest.test.js",
     "test": "mocha tests/*.test.js",
     "start" : "node index.js"
   },
