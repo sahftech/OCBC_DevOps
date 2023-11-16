@@ -1,5 +1,5 @@
 const { Builder } = require('selenium-webdriver');
-const { uiTest } = require('./uiTest');
+const { uiTest } = require('./UITest.js');
 
 const chrome = require('selenium-webdriver/chrome');
 const chromeOptions = new chrome.Options();
