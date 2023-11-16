@@ -6,7 +6,7 @@ const { expect } = require('chai');
 const firefox = require('selenium-webdriver/firefox');
 const firefoxOptions = new firefox.Options();
 firefoxOptions.addArguments(['--headless']);
-const driver = new Builder().forBrowser('firefox').setChromeOptions(firefoxOptions).build();
+const driver = new Builder().forBrowser('firefox').setFirefoxOptions(firefoxOptions).build();
 
 var server;
 before(async function () {
